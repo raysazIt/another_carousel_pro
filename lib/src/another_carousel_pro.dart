@@ -167,9 +167,9 @@ class AnotherCarouselState extends State<AnotherCarousel> {
         if (netImage is ImageProvider) {
           return Container(
             decoration: BoxDecoration(
-              borderRadius: widget.borderRadius
-                  ? BorderRadius.all(widget.radius ?? Radius.circular(8.0))
-                  : null,
+              borderRadius:
+                 BorderRadius.all(widget.radius! )
+                  ,
               image: DecorationImage(
                 //colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
                 image: netImage,
@@ -198,9 +198,9 @@ class AnotherCarouselState extends State<AnotherCarousel> {
           );
         } else if (netImage is FadeInImage) {
           return ClipRRect(
-            borderRadius: widget.borderRadius
-                ? BorderRadius.all(widget.radius ?? Radius.circular(8.0))
-                : null,
+            borderRadius:
+                 BorderRadius.all(widget.radius! )
+                ,
             child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -229,7 +229,7 @@ class AnotherCarouselState extends State<AnotherCarousel> {
     //         ? Container(
     //             decoration: BoxDecoration(
     //               borderRadius: widget.borderRadius
-    //                   ? BorderRadius.all( widget.radius ?? Radius.circular(8.0)): null,
+    //                   ? BorderRadius.all( widget.radius! ?? Radius.circular(8.0)): null,
     //               image: DecorationImage(
     //                 //colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
     //                 image: widget.defaultImage,
@@ -325,15 +325,13 @@ class AnotherCarouselState extends State<AnotherCarousel> {
                     color: widget.dotBgColor == null
                         ? Colors.grey[800]!.withOpacity(0.5)
                         : widget.dotBgColor,
-                    borderRadius: widget.borderRadius
-                        ? (widget.noRadiusForIndicator
-                            ? null
-                            : BorderRadius.only(
+                    borderRadius:
+                            BorderRadius.only(
                                 bottomLeft:
-                                    widget.radius ?? Radius.circular(8.0),
+                                    widget.radius! ,
                                 bottomRight:
-                                    widget.radius ?? Radius.circular(8.0)))
-                        : null,
+                                    widget.radius! )
+                        ,
                   ),
                   padding: EdgeInsets.all(widget.indicatorBgPadding),
                   child: Center(
